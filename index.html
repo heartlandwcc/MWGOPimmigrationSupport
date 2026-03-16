@@ -51,7 +51,7 @@
   <header class="bg-white shadow-sm px-6 py-4 flex flex-col xl:flex-row justify-between items-start xl:items-center z-50 border-b border-slate-200 relative">
     <div class="flex-1 w-full xl:w-auto mb-3 xl:mb-0">
       <h1 class="text-xl font-bold text-slate-800">Midwestern GOP Network: Immigration & Policy</h1>
-      <p class="text-xs text-slate-500 mt-1">Connecting politicians, funding boards, orgs, and policy initiatives.</p>
+      <p class="text-xs text-slate-500 mt-1">Connecting politicians, funding boards, orgs, religious institutions, and policy initiatives.</p>
     </div>
     
     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full xl:w-auto">
@@ -97,8 +97,15 @@
     <div class="absolute bottom-0 left-0 md:bottom-6 md:left-6 bg-white/90 backdrop-blur-sm p-2.5 pb-6 md:p-4 md:pb-4 rounded-tr-lg md:rounded-lg shadow-md border-t border-r md:border border-slate-200 text-[9px] md:text-xs text-slate-700 pointer-events-none z-10">
       <h3 class="font-semibold text-slate-900 mb-1.5 md:mb-2 border-b border-slate-200 pb-1">Node Types</h3>
       <div class="flex items-center mb-1"><div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-slate-400 mr-1.5 md:mr-2"></div> Politician</div>
-      <div class="flex items-center mb-1"><div class="text-yellow-500 text-[16px] md:text-lg leading-none mr-1.5 md:mr-2 relative -top-0.5">★</div> Diaspora / Biz</div>
+      <div class="flex items-center mb-1">
+        <div class="w-3.5 h-2.5 md:w-4 md:h-3 flex flex-col mr-1.5 md:mr-2 border border-slate-300 rounded-[1px] overflow-hidden">
+          <div class="h-1/2 w-full bg-[#005bbb]"></div>
+          <div class="h-1/2 w-full bg-[#ffd500]"></div>
+        </div> 
+        Diaspora / Biz
+      </div>
       <div class="flex items-center mb-1"><div class="w-0 h-0 border-l-[4.5px] border-r-[4.5px] border-b-[8px] md:border-l-[6px] md:border-r-[6px] md:border-b-[10px] border-l-transparent border-r-transparent border-b-slate-400 mr-1.5 md:mr-2"></div> Organization</div>
+      <div class="flex items-center mb-1"><div class="w-2.5 h-2.5 md:w-3.5 md:h-3.5 flex items-center justify-center mr-1.5 md:mr-2"><svg class="w-full h-full text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M10.5 2h3v6h6v3h-6v11h-3V11h-6V8h6V2z"/></svg></div> Religious Inst.</div>
       <div class="flex items-center mb-1"><div class="w-2 h-2 md:w-2.5 md:h-2.5 bg-slate-400 mr-1.5 md:mr-2 rotate-45 transform origin-center"></div> Initiative / Policy</div>
       <div class="flex items-center mb-1"><div class="w-2.5 h-2.5 md:w-3 md:h-3 bg-slate-400 mr-1.5 md:mr-2" style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);"></div> Funding / PAC</div>
       <div class="flex items-center"><div class="w-2.5 h-2.5 md:w-3 md:h-3 bg-slate-400 mr-1.5 md:mr-2"></div> Employer / Corp</div>
@@ -120,7 +127,7 @@
       <div id="node-info" class="p-6 flex-1 overflow-y-auto hidden">
         <div class="mb-4">
           <h3 id="panel-title" class="text-2xl font-bold text-slate-900 leading-tight">Name</h3>
-          <div class="flex gap-2 mt-3">
+          <div class="flex gap-2 mt-3 flex-wrap">
             <span id="panel-type" class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded text-xs font-semibold tracking-wide uppercase">Type</span>
             <span id="panel-stance">Stance</span>
           </div>
@@ -152,7 +159,6 @@
     const graphData = {
       "nodes": [
         {"id": "vance", "label": "[VP] JD Vance\n(US)", "type": "politician", "stance": "against", "details": "Vice President of the United States. Strong advocate for mass deportations and highly restrictive immigration policies, heavily focused on border security and interior enforcement. Role/Committees: Vice President; President of the Senate."},
-        
         {"id": "young", "label": "[S] Todd Young\n(IN)", "type": "politician", "stance": "support", "details": "Republican Senator from Indiana. Lead sponsor of the Heartland Visa Act, promoting place-based immigration to spur economic growth in the Midwest. Committees: Finance; Commerce, Science, & Transportation; Foreign Relations."},
         {"id": "banks", "label": "[S] Jim Banks\n(IN)", "type": "politician", "stance": "against", "details": "Republican Senator from Indiana. Strong advocate for strict border enforcement, deportation operations, and restrictive visa policies. Pressured heavily by local ag groups. Committees: Armed Services; HELP."},
         {"id": "grassley", "label": "[S] Chuck Grassley\n(IA)", "type": "politician", "stance": "against", "details": "Republican Senator from Iowa. Ranking member focused heavily on strict border security; recently led the Laken Riley Act and opposes amnesty without enforcement. Committees: Judiciary; Finance; Agriculture, Nutrition, & Forestry; Budget."},
@@ -231,9 +237,23 @@
         {"id": "ia_rural_health", "label": "Iowa Rural\nHealth Assoc.", "type": "org", "stance": "support", "details": "Advocates for rural hospitals facing severe staffing shortages. Pushes for J-1 visa waivers to bring immigrant doctors to dying rural communities, a critical issue for Grassley and Miller-Meeks."},
         {"id": "ia_dairy_assoc", "label": "Iowa State\nDairy Assoc.", "type": "org", "stance": "support", "details": "Represents Iowa dairy farmers who operate 365 days a year. Desperately pushes Grassley for year-round agricultural visa solutions to prevent farm bankruptcies."},
         {"id": "ia_rural_schools", "label": "Rural School\nAdvocates (IA)", "type": "org", "stance": "support", "details": "Represents rural Iowa school districts that increasingly rely on immigrant families to maintain enrollment numbers and prevent devastating local school closures."},
-        {"id": "ia_catholic_conf", "label": "Iowa Catholic\nConference", "type": "org", "stance": "support", "details": "Influential faith-based voice in rural Iowa. Advocates for the dignity of agricultural workers and pressures lawmakers for humane, community-sustaining reforms."},
         {"id": "ia_rural_dev", "label": "Iowa Rural Dev.\nCouncil", "type": "org", "stance": "support", "details": "Focuses on the survival of Iowa's rural 'Main Streets.' Argues that without new immigrant populations, aging rural economies will collapse."},
 
+        <!-- Religious Institutions -->
+        {"id": "ia_catholic_conf", "label": "Iowa Catholic\nConference", "type": "religious", "stance": "support", "details": "Influential faith-based voice in rural Iowa. Advocates for the dignity of agricultural workers and pressures lawmakers for humane, community-sustaining reforms."},
+        {"id": "eit", "label": "Evangelical\nImmigration Table", "type": "religious", "stance": "support", "details": "Prominent coalition of evangelical organizations advocating for bipartisan immigration reform, including a path to citizenship, secure borders, and family unity."},
+        {"id": "world_relief", "label": "World Relief", "type": "religious", "stance": "support", "details": "Global Christian humanitarian organization deeply involved in refugee resettlement across the Midwest and fiercely advocating for robust refugee admissions."},
+        {"id": "global_refuge", "label": "Global Refuge\n(LIRS)", "type": "religious", "stance": "support", "details": "Formerly Lutheran Immigration and Refugee Service. Massive faith-based organization actively resettling refugees and advocating across the Upper Midwest."},
+        {"id": "oh_catholic", "label": "Catholic Conf.\nof Ohio", "type": "religious", "stance": "support", "details": "Advocates for policies respecting the dignity of immigrants and refugees, frequently pressing OH lawmakers on humane border solutions and family preservation."},
+        {"id": "ne_catholic", "label": "Nebraska Catholic\nConference", "type": "religious", "stance": "support", "details": "Pushes for immigrant worker rights and family unity in Nebraska, acting as a moral counterweight to strict enforcement and deportation policies."},
+        {"id": "wi_catholic", "label": "Wisconsin Catholic\nConference", "type": "religious", "stance": "support", "details": "Advocates for undocumented dairy workers and refugee populations in Wisconsin, grounding their stance in foundational Catholic social teaching."},
+        {"id": "in_catholic", "label": "Indiana Catholic\nConference", "type": "religious", "stance": "support", "details": "Pressures Indiana delegates on comprehensive immigration reform, human dignity, and the moral imperative of welcoming the stranger."},
+        {"id": "national_e_assoc", "label": "National Assoc.\nof Evangelicals", "type": "religious", "stance": "support", "details": "Major evangelical governing body endorsing the Evangelical Immigration Table's push for a pathway to legal status and secure borders."},
+        {"id": "usccb", "label": "USCCB", "type": "religious", "stance": "support", "details": "The US Conference of Catholic Bishops. A powerful national and regional voice demanding humane border treatment, refugee support, and opposing mass deportations."},
+        {"id": "bethany_christian", "label": "Bethany Christian\nServices", "type": "religious", "stance": "support", "details": "Prominent evangelical social services organization heavily involved in refugee resettlement and family reunification across the Midwest."},
+        {"id": "jfon_midwest", "label": "Justice For Our\nNeighbors (JFON)", "type": "religious", "stance": "support", "details": "United Methodist Church-affiliated network providing free immigration legal services and advocating for compassionate immigration policies in rural Midwest communities."},
+
+        <!-- Initiatives -->
         {"id": "heartland_visa", "label": "Heartland Visa Act", "type": "initiative", "stance": "support", "details": "Legislation aimed at creating place-based visas to attract highly skilled immigrants and entrepreneurs to rural and stagnating regions."},
         {"id": "laken_riley", "label": "Laken Riley Act", "type": "initiative", "stance": "against", "details": "Legislation mandating ICE arrest and detention for undocumented immigrants charged with certain local offenses."},
         {"id": "secure_border", "label": "Secure the\nBorder Act", "type": "initiative", "stance": "against", "details": "Comprehensive GOP border security bill implementing strict asylum limits, border wall funding, and interior enforcement."},
@@ -244,31 +264,32 @@
         {"id": "ewea_act", "label": "Essential Workers\n(EWEA) Act", "type": "initiative", "stance": "support", "details": "Proposes a new 'H-2C' visa category for non-seasonal, lesser-skilled workers, highly sought by the meatpacking and food processing industries."},
         {"id": "dignity_act", "label": "The Dignity Act", "type": "initiative", "stance": "support", "details": "Bipartisan comprehensive immigration reform bill containing substantial agricultural workforce provisions and a path to legal status for existing undocumented farmworkers."},
 
+        <!-- Funding / PACs -->
         {"id": "senate_leadership", "label": "Senate\nLeadership Fund", "type": "funding", "stance": "neutral", "details": "Massive Super PAC dedicated to protecting and expanding the Republican Senate Majority across all states."},
         {"id": "hoosiers_first", "label": "Hoosiers First PAC", "type": "funding", "stance": "support", "details": "Leadership PAC affiliated with Senator Todd Young."},
         {"id": "hawkeye_pac", "label": "Hawkeye PAC", "type": "funding", "stance": "against", "details": "Leadership PAC affiliated with Senator Chuck Grassley."},
         {"id": "heartland_values", "label": "Heartland Values PAC", "type": "funding", "stance": "against", "details": "Leadership PAC affiliated with Senator John Thune."},
         {"id": "show_me_pac", "label": "Show-Me PAC", "type": "funding", "stance": "against", "details": "Leadership PAC affiliated with Senator Josh Hawley."},
         {"id": "free_state", "label": "Free State PAC", "type": "funding", "stance": "neutral", "details": "Leadership PAC affiliated with Senator Jerry Moran."},
-        
         {"id": "agripac", "label": "AgriPAC\n(Farm Bureau)", "type": "funding", "stance": "support", "details": "The political action committee of the American Farm Bureau, funneling immense funding to ag-friendly candidates."},
         {"id": "pork_pac", "label": "PorkPAC\n(NPPC)", "type": "funding", "stance": "support", "details": "PAC for the National Pork Producers Council, heavily backing candidates who support ag labor solutions."},
         {"id": "clf", "label": "Congressional\nLeadership Fund", "type": "funding", "stance": "neutral", "details": "Super PAC endorsed by House GOP leadership, spending millions to protect incumbents in rural midwestern districts."},
         {"id": "hff", "label": "House Freedom\nFund", "type": "funding", "stance": "against", "details": "PAC affiliated with the House Freedom Caucus, funding hardline conservative candidates who heavily emphasize border closures and strict enforcement."},
         
+        <!-- Employers -->
         {"id": "tyson", "label": "Tyson Foods", "type": "employer", "stance": "support", "details": "One of the world's largest meat processors. Heavily reliant on immigrant labor across its rural Midwestern poultry, beef, and pork plants."},
         {"id": "jbs", "label": "JBS USA", "type": "employer", "stance": "support", "details": "Massive meat processing corporation with huge plants in Nebraska, Iowa, and elsewhere. Constantly lobbies for expanded visa programs to solve critical labor shortages."},
         {"id": "cargill", "label": "Cargill", "type": "employer", "stance": "support", "details": "Global food corporation headquartered in the Midwest. Strongly advocates for bipartisan immigration reform to stabilize the agricultural supply chain."},
         {"id": "smithfield", "label": "Smithfield Foods", "type": "employer", "stance": "support", "details": "Major pork producer with massive processing facilities in rural Missouri, Iowa, and South Dakota. Dependent on a foreign-born workforce."},
         {"id": "seaboard", "label": "Seaboard Foods", "type": "employer", "stance": "support", "details": "Large pork producer operating extensively in Kansas and the surrounding region. Lobbies heavily for year-round agricultural visas."},
         {"id": "foremost_farms", "label": "Foremost Farms", "type": "employer", "stance": "support", "details": "A major dairy cooperative and processor in the Midwest/Wisconsin area heavily dependent on a stable immigrant workforce."},
-        
         {"id": "beardstown_smbs", "label": "Beardstown IL\nSMBs", "type": "employer", "stance": "support", "details": "Representative of larger local businesses and town economies in rural meatpacking towns that completely rely on the immigrant workforce for both labor and their consumer base."},
         {"id": "pssi", "label": "PSSI\n(Sanitation)", "type": "employer", "stance": "support", "details": "Major sanitation contractor for Midwestern meatpacking plants. Recently faced massive federal fallout over immigrant child labor, highlighting desperate rural labor shortages."},
         {"id": "regional_processors", "label": "Regional Ag\nProcessors", "type": "employer", "stance": "support", "details": "Medium-sized independent agricultural processors across the Midwest that frequently face ICE raids and audits, which can instantly cripple local town economies."},
         {"id": "case_farms", "label": "Case Farms", "type": "employer", "stance": "support", "details": "Major poultry processor operating in Ohio. Highly dependent on immigrant and refugee labor forces to staff its processing lines."},
         {"id": "rantoul_foods", "label": "Rantoul Foods", "type": "employer", "stance": "support", "details": "Large pork processing facility in rural Illinois. Relies extensively on immigrant workers to maintain daily operations in the face of local labor shortages."},
 
+        <!-- Diaspora -->
         {"id": "ucca_il", "label": "UCCA Illinois", "type": "diaspora", "stance": "support", "details": "Ukrainian Congress Committee of America (IL Division). A massive diaspora block in Illinois advocating for refugee pathways (U4U) and immigrant workforce protections."},
         {"id": "uzo_ohio", "label": "UZO Ohio", "type": "diaspora", "stance": "support", "details": "United Ukrainian Organizations of Ohio. A powerful cultural and political force in Ohio, deeply rooted in the Parma/Cleveland area, pressuring lawmakers for refugee support."},
         {"id": "vitaliy_kutnyy", "label": "Vitaliy Kutnyy\n(Diaspora Biz)", "type": "diaspora", "stance": "support", "details": "President & CEO of Selfreliance FCU and prominent Ukrainian-American business leader. Represents the massive economic impact of diaspora-led institutions in the Midwest."},
@@ -504,15 +525,6 @@
         {"from": "wi_cheese_makers", "to": "johnson", "label": "Pressures"},
         {"from": "foremost_farms", "to": "van_orden", "label": "Lobbies"},
 
-        {"from": "ia_rural_health", "to": "grassley", "label": "Pressures"},
-        {"from": "ia_rural_health", "to": "miller_meeks", "label": "Lobbies"},
-        {"from": "ia_dairy_assoc", "to": "grassley", "label": "Pressures"},
-        {"from": "ia_rural_schools", "to": "grassley", "label": "Pressures"},
-        {"from": "ia_catholic_conf", "to": "grassley", "label": "Pressures"},
-        {"from": "ia_rural_dev", "to": "grassley", "label": "Pressures"},
-        {"from": "ia_dairy_assoc", "to": "h2a_expansion", "label": "Advocates For"},
-        {"from": "ia_rural_dev", "to": "heartland_visa", "label": "Endorses"},
-
         {"from": "ohio_nursery", "to": "jordan", "label": "Pressures"},
         {"from": "ohio_dairy", "to": "jordan", "label": "Pressures"},
         {"from": "ohio_poultry", "to": "jordan", "label": "Pressures"},
@@ -552,7 +564,32 @@
         {"from": "dusty_johnson", "to": "farm_workforce", "label": "Supporter"},
         {"from": "bacon", "to": "dignity_act", "label": "Supporter"},
         {"from": "bacon", "to": "farm_workforce", "label": "Supporter"},
-        {"from": "bipartisan_policy", "to": "bacon", "label": "Advises"}
+        {"from": "bipartisan_policy", "to": "bacon", "label": "Advises"},
+
+        <!-- Religious Institution Edges -->
+        {"from": "ia_catholic_conf", "to": "grassley", "label": "Pressures"},
+        {"from": "eit", "to": "young", "label": "Lobbies"},
+        {"from": "eit", "to": "thune", "label": "Pressures"},
+        {"from": "eit", "to": "dignity_act", "label": "Endorses"},
+        {"from": "national_e_assoc", "to": "eit", "label": "Member"},
+        {"from": "world_relief", "to": "grothman", "label": "Pressures"},
+        {"from": "world_relief", "to": "farm_workforce", "label": "Advocates For"},
+        {"from": "global_refuge", "to": "finstad", "label": "Pressures"},
+        {"from": "global_refuge", "to": "bacon", "label": "Lobbies"},
+        {"from": "oh_catholic", "to": "vance", "label": "Pressures"},
+        {"from": "oh_catholic", "to": "jordan", "label": "Pressures"},
+        {"from": "oh_catholic", "to": "moreno", "label": "Pressures"},
+        {"from": "ne_catholic", "to": "fischer", "label": "Pressures"},
+        {"from": "ne_catholic", "to": "bacon", "label": "Lobbies"},
+        {"from": "wi_catholic", "to": "johnson", "label": "Pressures"},
+        {"from": "wi_catholic", "to": "van_orden", "label": "Lobbies"},
+        {"from": "in_catholic", "to": "banks", "label": "Pressures"},
+        {"from": "in_catholic", "to": "young", "label": "Lobbies"},
+        {"from": "usccb", "to": "dignity_act", "label": "Advocates For"},
+        {"from": "usccb", "to": "jordan", "label": "Pressures"},
+        {"from": "bethany_christian", "to": "bacon", "label": "Lobbies"},
+        {"from": "jfon_midwest", "to": "feenstra", "label": "Pressures"},
+        {"from": "jfon_midwest", "to": "ashley_hinson", "label": "Pressures"}
       ]
     };
 
@@ -560,6 +597,7 @@
     const typeLabelMap = {
       'politician': 'Politician / Official',
       'org': 'Policy Org / Charity',
+      'religious': 'Religious Institution',
       'initiative': 'Initiative / Policy',
       'funding': 'Funding / Board',
       'employer': 'Employer / Corp',
@@ -593,6 +631,7 @@
       // Shape and Size Mapping
       let shape = 'dot';
       let size = 20;
+      let nodeImage = undefined;
       
       if (n.type === 'politician') {
         shape = 'dot'; // Circle
@@ -610,8 +649,22 @@
         shape = 'square';
         size = 24;
       } else if (n.type === 'diaspora') {
-        shape = 'star';
+        shape = 'image';
         size = 28;
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" width="100" height="60">
+          <rect width="100" height="30" fill="#005bbb"/>
+          <rect y="30" width="100" height="30" fill="#ffd500"/>
+          <rect width="100" height="60" fill="none" stroke="${borderColor}" stroke-width="4"/>
+        </svg>`;
+        nodeImage = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+      } else if (n.type === 'religious') {
+        shape = 'image';
+        size = 32;
+        // Dynamically create an SVG cross utilizing the dynamically mapped stance colors
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+          <path d="M 40 5 L 60 5 L 60 30 L 85 30 L 85 50 L 60 50 L 60 95 L 40 95 L 40 50 L 15 50 L 15 30 L 40 30 Z" fill="${bgColor}" stroke="${borderColor}" stroke-width="4"/>
+        </svg>`;
+        nodeImage = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
       }
 
       return {
@@ -619,6 +672,7 @@
         label: n.label,
         title: "Click to view details", // Hover tooltip
         shape: shape,
+        image: nodeImage, // vis.js ignores this if shape is not 'image'
         size: size,
         font: { 
           color: fontColor, 
@@ -670,7 +724,7 @@
         maxVelocity: 50,
         solver: 'forceAtlas2Based',
         timestep: 0.35,
-        stabilization: { iterations: 150 }
+        stabilization: { iterations: 180 }
       },
       interaction: {
         hover: true,
