@@ -45,7 +45,7 @@
     };
   </script>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 h-screen overflow-hidden flex flex-col">
+<body class="bg-slate-50 font-sans text-slate-800 h-[100dvh] overflow-hidden flex flex-col">
 
   <!-- Header / Legend & Search -->
   <header class="bg-white shadow-sm px-6 py-4 flex flex-col xl:flex-row justify-between items-start xl:items-center z-20 border-b border-slate-200 relative">
@@ -57,9 +57,10 @@
     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full xl:w-auto">
       <!-- Legend -->
       <div class="flex flex-wrap gap-3 text-sm font-medium order-2 sm:order-1">
-        <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-emerald-500 mr-2 shadow-sm"></span> Pro-Expansion / Visas</div>
+        <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-yellow-500 mr-2 shadow-sm"></span> Diaspora / Biz</div>
+        <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-emerald-500 mr-2 shadow-sm"></span> Pro-Expansion</div>
         <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-rose-500 mr-2 shadow-sm"></span> Strict Enforcement</div>
-        <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-slate-400 mr-2 shadow-sm"></span> Neutral / Broad Focus</div>
+        <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-slate-400 mr-2 shadow-sm"></span> Neutral Focus</div>
       </div>
 
       <!-- Search Bar -->
@@ -93,9 +94,10 @@
     </div>
     
     <!-- Legend overlay for Shapes -->
-    <div class="absolute bottom-0 left-0 md:bottom-6 md:left-6 bg-white/90 backdrop-blur-sm p-2.5 md:p-4 rounded-tr-lg md:rounded-lg shadow-md border-t border-r md:border border-slate-200 text-[9px] md:text-xs text-slate-700 pointer-events-none z-10">
+    <div class="absolute bottom-0 left-0 md:bottom-6 md:left-6 bg-white/90 backdrop-blur-sm p-2.5 pb-6 md:p-4 md:pb-4 rounded-tr-lg md:rounded-lg shadow-md border-t border-r md:border border-slate-200 text-[9px] md:text-xs text-slate-700 pointer-events-none z-10">
       <h3 class="font-semibold text-slate-900 mb-1.5 md:mb-2 border-b border-slate-200 pb-1">Node Types</h3>
       <div class="flex items-center mb-1"><div class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-slate-400 mr-1.5 md:mr-2"></div> Politician</div>
+      <div class="flex items-center mb-1"><div class="text-yellow-500 text-[16px] md:text-lg leading-none mr-1.5 md:mr-2 relative -top-0.5">★</div> Diaspora / Biz</div>
       <div class="flex items-center mb-1"><div class="w-0 h-0 border-l-[4.5px] border-r-[4.5px] border-b-[8px] md:border-l-[6px] md:border-r-[6px] md:border-b-[10px] border-l-transparent border-r-transparent border-b-slate-400 mr-1.5 md:mr-2"></div> Organization</div>
       <div class="flex items-center mb-1"><div class="w-2 h-2 md:w-2.5 md:h-2.5 bg-slate-400 mr-1.5 md:mr-2 rotate-45 transform origin-center"></div> Initiative / Policy</div>
       <div class="flex items-center mb-1"><div class="w-2.5 h-2.5 md:w-3 md:h-3 bg-slate-400 mr-1.5 md:mr-2" style="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);"></div> Funding / PAC</div>
@@ -149,24 +151,24 @@
     // Embedded JSON Data
     const graphData = {
       "nodes": [
-        {"id": "young", "label": "Todd Young\n(Sen-IN)", "type": "politician", "stance": "support", "details": "Republican Senator from Indiana. Lead sponsor of the Heartland Visa Act, promoting place-based immigration to spur economic growth in the Midwest."},
-        {"id": "banks", "label": "Jim Banks\n(Sen-IN)", "type": "politician", "stance": "against", "details": "Republican Senator from Indiana. Strong advocate for strict border enforcement, deportation operations, and restrictive visa policies. Pressured heavily by local ag groups."},
-        {"id": "grassley", "label": "Chuck Grassley\n(Sen-IA)", "type": "politician", "stance": "against", "details": "Republican Senator from Iowa. Ranking member focused heavily on strict border security; recently led the Laken Riley Act and opposes amnesty without enforcement."},
-        {"id": "ernst", "label": "Joni Ernst\n(Sen-IA)", "type": "politician", "stance": "against", "details": "Republican Senator from Iowa. Consistently supports border wall funding, increased ICE enforcement, and strict immigration caps."},
-        {"id": "thune", "label": "John Thune\n(Sen-SD)", "type": "politician", "stance": "against", "details": "Republican Senator from South Dakota and Senate GOP Leader. While historically supportive of H-2B visas, currently leads strong opposition to Democratic ICE restrictions and champions heavy border security."},
-        {"id": "rounds", "label": "Mike Rounds\n(Sen-SD)", "type": "politician", "stance": "against", "details": "Republican Senator from South Dakota. Consistent voter for border security enhancements and increased funding for border patrols."},
-        {"id": "fischer", "label": "Deb Fischer\n(Sen-NE)", "type": "politician", "stance": "against", "details": "Republican Senator from Nebraska. Focuses heavily on tightening asylum rules, interior enforcement, and border security infrastructure."},
-        {"id": "ricketts", "label": "Pete Ricketts\n(Sen-NE)", "type": "politician", "stance": "against", "details": "Republican Senator from Nebraska. Vocal critic of current border policies; strongly supported deploying National Guard troops to the southern border."},
-        {"id": "moran", "label": "Jerry Moran\n(Sen-KS)", "type": "politician", "stance": "neutral", "details": "Republican Senator from Kansas. Takes a balanced approach, emphasizing national security while strongly advocating for agricultural labor needs and H-2A guest worker programs."},
-        {"id": "marshall", "label": "Roger Marshall\n(Sen-KS)", "type": "politician", "stance": "against", "details": "Republican Senator from Kansas. Strong proponent of the Secure the Border Act and highly restrictive asylum policies."},
-        {"id": "hawley", "label": "Josh Hawley\n(Sen-MO)", "type": "politician", "stance": "against", "details": "Republican Senator from Missouri. Hardline stance on immigration; vigorously opposes amnesty and any expansion of guest worker programs."},
-        {"id": "schmitt", "label": "Eric Schmitt\n(Sen-MO)", "type": "politician", "stance": "against", "details": "Republican Senator from Missouri. Previously sued the federal administration over border policies during his tenure as Missouri Attorney General."},
+        {"id": "young", "label": "[S] Todd Young\n(IN)", "type": "politician", "stance": "support", "details": "Republican Senator from Indiana. Lead sponsor of the Heartland Visa Act, promoting place-based immigration to spur economic growth in the Midwest. Committees: Finance; Commerce, Science, & Transportation; Foreign Relations."},
+        {"id": "banks", "label": "[S] Jim Banks\n(IN)", "type": "politician", "stance": "against", "details": "Republican Senator from Indiana. Strong advocate for strict border enforcement, deportation operations, and restrictive visa policies. Pressured heavily by local ag groups. Committees: Armed Services; HELP."},
+        {"id": "grassley", "label": "[S] Chuck Grassley\n(IA)", "type": "politician", "stance": "against", "details": "Republican Senator from Iowa. Ranking member focused heavily on strict border security; recently led the Laken Riley Act and opposes amnesty without enforcement. Committees: Judiciary; Finance; Agriculture, Nutrition, & Forestry; Budget."},
+        {"id": "ernst", "label": "[S] Joni Ernst\n(IA)", "type": "politician", "stance": "against", "details": "Republican Senator from Iowa. Consistently supports border wall funding, increased ICE enforcement, and strict immigration caps. Committees: Agriculture, Nutrition, & Forestry; Armed Services; Small Business."},
+        {"id": "thune", "label": "[S] John Thune\n(SD)", "type": "politician", "stance": "against", "details": "Republican Senator from South Dakota and Senate GOP Leader. While historically supportive of H-2B visas, currently leads strong opposition to Democratic ICE restrictions and champions heavy border security. Committees: Agriculture, Nutrition, & Forestry; Finance; Commerce."},
+        {"id": "rounds", "label": "[S] Mike Rounds\n(SD)", "type": "politician", "stance": "against", "details": "Republican Senator from South Dakota. Consistent voter for border security enhancements and increased funding for border patrols. Committees: Armed Services; Banking; Indian Affairs."},
+        {"id": "fischer", "label": "[S] Deb Fischer\n(NE)", "type": "politician", "stance": "against", "details": "Republican Senator from Nebraska. Focuses heavily on tightening asylum rules, interior enforcement, and border security infrastructure. Committees: Agriculture; Armed Services; Commerce."},
+        {"id": "ricketts", "label": "[S] Pete Ricketts\n(NE)", "type": "politician", "stance": "against", "details": "Republican Senator from Nebraska. Vocal critic of current border policies; strongly supported deploying National Guard troops to the southern border. Committees: Foreign Relations; Environment & Public Works."},
+        {"id": "moran", "label": "[S] Jerry Moran\n(KS)", "type": "politician", "stance": "neutral", "details": "Republican Senator from Kansas. Takes a balanced approach, emphasizing national security while strongly advocating for agricultural labor needs and H-2A guest worker programs. Committees: Appropriations; Veterans' Affairs; Commerce."},
+        {"id": "marshall", "label": "[S] Roger Marshall\n(KS)", "type": "politician", "stance": "against", "details": "Republican Senator from Kansas. Strong proponent of the Secure the Border Act and highly restrictive asylum policies. Committees: Agriculture; HELP; Budget; Homeland Security."},
+        {"id": "hawley", "label": "[S] Josh Hawley\n(MO)", "type": "politician", "stance": "against", "details": "Republican Senator from Missouri. Hardline stance on immigration; vigorously opposes amnesty and any expansion of guest worker programs. Committees: Judiciary; Homeland Security and Governmental Affairs."},
+        {"id": "schmitt", "label": "[S] Eric Schmitt\n(MO)", "type": "politician", "stance": "against", "details": "Republican Senator from Missouri. Previously sued the federal administration over border policies during his tenure as Missouri Attorney General. Committees: Armed Services; Judiciary; Commerce."},
         
-        {"id": "feenstra", "label": "Randy Feenstra\n(Rep-IA)", "type": "politician", "stance": "against", "details": "Republican Congressman from Iowa (District 4). Represents a massively productive ag district. Balances border security rhetoric with immense pressure from farm groups for guest workers."},
-        {"id": "smith", "label": "Adrian Smith\n(Rep-NE)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Nebraska (District 3). Represents a vast rural district relying heavily on agriculture; navigates between conservative border policies and ag labor necessities."},
-        {"id": "mann", "label": "Tracey Mann\n(Rep-KS)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Kansas (District 1 - 'The Big First'). Deeply tied to agricultural interests and heavily lobbied by farm bureaus regarding guest worker programs."},
-        {"id": "baird", "label": "Jim Baird\n(Rep-IN)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Indiana. Sits on the House Agriculture Committee, focusing on rural development and farm labor shortages."},
-        {"id": "ashley_hinson", "label": "Ashley Hinson\n(Rep-IA)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from Iowa. Strong advocate for physical border security but faces demands from local agriculture for a reliable workforce."},
+        {"id": "feenstra", "label": "[H] Randy Feenstra\n(IA)", "type": "politician", "stance": "against", "details": "Republican Congressman from Iowa (District 4). Represents a massively productive ag district. Balances border security rhetoric with immense pressure from farm groups for guest workers. Committees: Agriculture; Ways and Means."},
+        {"id": "smith", "label": "[H] Adrian Smith\n(NE)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Nebraska (District 3). Represents a vast rural district relying heavily on agriculture; navigates between conservative border policies and ag labor necessities. Committees: Ways and Means."},
+        {"id": "mann", "label": "[H] Tracey Mann\n(KS)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Kansas (District 1 - 'The Big First'). Deeply tied to agricultural interests and heavily lobbied by farm bureaus regarding guest worker programs. Committees: Agriculture; Transportation and Infrastructure."},
+        {"id": "baird", "label": "[H] Jim Baird\n(IN)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Indiana. Sits on the House Agriculture Committee, focusing on rural development and farm labor shortages. Committees: Agriculture; Science, Space, and Technology."},
+        {"id": "ashley_hinson", "label": "[H] Ashley Hinson\n(IA)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from Iowa. Strong advocate for physical border security but faces demands from local agriculture for a reliable workforce. Committees: Appropriations."},
 
         {"id": "eig", "label": "Economic\nInnovation Grp", "type": "org", "stance": "support", "details": "Public policy organization that developed and heavily champions the Heartland Visa concept to combat demographic and economic decline in the Midwest."},
         {"id": "afp", "label": "Americans for\nProsperity", "type": "org", "stance": "support", "details": "Conservative political advocacy group that officially endorsed the Heartland Visa Act to boost local economies through skilled immigration."},
@@ -222,11 +224,11 @@
         {"id": "pssi", "label": "PSSI\n(Sanitation)", "type": "employer", "stance": "support", "details": "Major sanitation contractor for Midwestern meatpacking plants. Recently faced massive federal fallout over immigrant child labor, highlighting desperate rural labor shortages."},
         {"id": "regional_processors", "label": "Regional Ag\nProcessors", "type": "employer", "stance": "support", "details": "Medium-sized independent agricultural processors across the Midwest that frequently face ICE raids and audits, which can instantly cripple local town economies."},
 
-        {"id": "vance", "label": "JD Vance\n(VP)", "type": "politician", "stance": "against", "details": "Vice President of the United States. Strong advocate for mass deportations and highly restrictive immigration policies, heavily focused on border security and interior enforcement."},
-        {"id": "moreno", "label": "Bernie Moreno\n(Sen-OH)", "type": "politician", "stance": "against", "details": "Republican Senator from Ohio. Campaigned heavily on securing the border, deportations, and ending sanctuary cities, aligning closely with hardline immigration stances."},
-        {"id": "jordan", "label": "Jim Jordan\n(Rep-OH)", "type": "politician", "stance": "against", "details": "Republican Congressman from Ohio. Highly influential Judiciary Chair, shaping hardline conservative immigration policy and a massive proponent of Mandatory E-Verify."},
-        {"id": "mary_miller", "label": "Mary Miller\n(Rep-IL)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from rural Illinois (District 15). Member of the House Freedom Caucus, intensely focused on border closures despite representing a heavy agricultural district."},
-        {"id": "bost", "label": "Mike Bost\n(Rep-IL)", "type": "politician", "stance": "against", "details": "Republican Congressman from Southern Illinois. Strongly backs strict border enforcement while navigating the intense labor demands from his rural, agriculture-heavy constituency."},
+        {"id": "vance", "label": "[VP] JD Vance\n(US)", "type": "politician", "stance": "against", "details": "Vice President of the United States. Strong advocate for mass deportations and highly restrictive immigration policies, heavily focused on border security and interior enforcement. Role/Committees: Vice President; President of the Senate."},
+        {"id": "moreno", "label": "[S] Bernie Moreno\n(OH)", "type": "politician", "stance": "against", "details": "Republican Senator from Ohio. Campaigned heavily on securing the border, deportations, and ending sanctuary cities, aligning closely with hardline immigration stances. Committees: Banking; Small Business."},
+        {"id": "jordan", "label": "[H] Jim Jordan\n(OH)", "type": "politician", "stance": "against", "details": "Republican Congressman from Ohio. Highly influential Judiciary Chair, shaping hardline conservative immigration policy and a massive proponent of Mandatory E-Verify. Committees: Judiciary (Chair); Oversight and Accountability."},
+        {"id": "mary_miller", "label": "[H] Mary Miller\n(IL)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from rural Illinois (District 15). Member of the House Freedom Caucus, intensely focused on border closures despite representing a heavy agricultural district. Committees: Agriculture; Education and the Workforce."},
+        {"id": "bost", "label": "[H] Mike Bost\n(IL)", "type": "politician", "stance": "against", "details": "Republican Congressman from Southern Illinois. Strongly backs strict border enforcement while navigating the intense labor demands from his rural, agriculture-heavy constituency. Committees: Veterans' Affairs (Chair); Agriculture; Transportation and Infrastructure."},
         
         {"id": "il_farm_bureau", "label": "Illinois Farm\nBureau", "type": "org", "stance": "support", "details": "Represents agricultural interests across Illinois. Highly active in lobbying for H-2A visa expansion to ensure reliable labor for livestock and crop farming."},
         {"id": "ohio_farm_bureau", "label": "Ohio Farm\nBureau", "type": "org", "stance": "support", "details": "Key advocacy group for Ohio farmers, especially in the nursery, greenhouse, and dairy sectors, pushing hard for year-round agricultural worker visas."},
@@ -250,7 +252,15 @@
         {"id": "ia_dairy_assoc", "label": "Iowa State\nDairy Assoc.", "type": "org", "stance": "support", "details": "Represents Iowa dairy farmers who operate 365 days a year. Desperately pushes Grassley for year-round agricultural visa solutions to prevent farm bankruptcies."},
         {"id": "ia_rural_schools", "label": "Rural School\nAdvocates (IA)", "type": "org", "stance": "support", "details": "Represents rural Iowa school districts that increasingly rely on immigrant families to maintain enrollment numbers and prevent devastating local school closures."},
         {"id": "ia_catholic_conf", "label": "Iowa Catholic\nConference", "type": "org", "stance": "support", "details": "Influential faith-based voice in rural Iowa. Advocates for the dignity of agricultural workers and pressures lawmakers for humane, community-sustaining reforms."},
-        {"id": "ia_rural_dev", "label": "Iowa Rural Dev.\nCouncil", "type": "org", "stance": "support", "details": "Focuses on the survival of Iowa's rural 'Main Streets.' Argues that without new immigrant populations, aging rural economies will collapse."}
+        {"id": "ia_rural_dev", "label": "Iowa Rural Dev.\nCouncil", "type": "org", "stance": "support", "details": "Focuses on the survival of Iowa's rural 'Main Streets.' Argues that without new immigrant populations, aging rural economies will collapse."},
+        
+        {"id": "ucca_il", "label": "UCCA Illinois", "type": "diaspora", "stance": "support", "details": "Ukrainian Congress Committee of America (IL Division). A massive diaspora block in Illinois advocating for refugee pathways (U4U) and immigrant workforce protections."},
+        {"id": "uzo_ohio", "label": "UZO Ohio", "type": "diaspora", "stance": "support", "details": "United Ukrainian Organizations of Ohio. A powerful cultural and political force in Ohio, deeply rooted in the Parma/Cleveland area, pressuring lawmakers for refugee support."},
+        {"id": "vitaliy_kutnyy", "label": "Vitaliy Kutnyy\n(Diaspora Biz)", "type": "diaspora", "stance": "support", "details": "President & CEO of Selfreliance FCU and prominent Ukrainian-American business leader. Represents the massive economic impact of diaspora-led institutions in the Midwest."},
+        {"id": "selfreliance_fcu", "label": "Selfreliance FCU", "type": "diaspora", "stance": "support", "details": "Massive financial anchor for the Midwestern Ukrainian diaspora (over $800M in assets). Exerts significant economic leverage and funds community initiatives."},
+        {"id": "usubc_midwest", "label": "US-Ukraine Biz\nCouncil (Ag)", "type": "diaspora", "stance": "support", "details": "Connecting massive Midwestern agricultural equipment and seed exporters (like John Deere) with Ukraine. Highlights global need for stable local ag workforce."},
+        {"id": "diaspora_trucking", "label": "Diaspora Trucking\n(e.g., Vista Trans)", "type": "diaspora", "stance": "support", "details": "Eastern European and Ukrainian-owned logistics and trucking firms form the backbone of Midwestern agricultural transport. Heavily impacted by restrictive labor laws."},
+        {"id": "ia_ukrainians", "label": "Ukrainian-Americans\nof Iowa", "type": "diaspora", "stance": "support", "details": "Grassroots regional diaspora actively resettling refugees into rural Iowa ag communities to help stem local depopulation and labor shortages."}
       ],
       "edges": [
         {"from": "young", "to": "heartland_visa", "label": "Sponsor"},
@@ -445,7 +455,27 @@
         {"from": "oh4_farm_bureaus", "to": "jordan", "label": "Pressures"},
         {"from": "ohio_nursery", "to": "everify", "label": "Opposes"},
         {"from": "ohio_dairy", "to": "h2a_expansion", "label": "Advocates For"},
-        {"from": "ohio_poultry", "to": "ewea_act", "label": "Advocates For"}
+        {"from": "ohio_poultry", "to": "ewea_act", "label": "Advocates For"},
+
+        {"from": "ucca_il", "to": "mary_miller", "label": "Pressures"},
+        {"from": "ucca_il", "to": "bost", "label": "Pressures"},
+        {"from": "uzo_ohio", "to": "vance", "label": "Pressures"},
+        {"from": "uzo_ohio", "to": "moreno", "label": "Pressures"},
+        {"from": "uzo_ohio", "to": "jordan", "label": "Pressures"},
+        {"from": "vitaliy_kutnyy", "to": "selfreliance_fcu", "label": "President / CEO"},
+        {"from": "vitaliy_kutnyy", "to": "banks", "label": "Pressures"},
+        {"from": "vitaliy_kutnyy", "to": "young", "label": "Lobbies"},
+        {"from": "selfreliance_fcu", "to": "ucca_il", "label": "Funds"},
+        {"from": "selfreliance_fcu", "to": "bost", "label": "Pressures"},
+        {"from": "usubc_midwest", "to": "grassley", "label": "Lobbies"},
+        {"from": "usubc_midwest", "to": "moran", "label": "Lobbies"},
+        {"from": "diaspora_trucking", "to": "jordan", "label": "Pressures"},
+        {"from": "diaspora_trucking", "to": "banks", "label": "Pressures"},
+        {"from": "diaspora_trucking", "to": "cargill", "label": "Supply Chain"},
+        {"from": "ia_ukrainians", "to": "feenstra", "label": "Pressures"},
+        {"from": "ia_ukrainians", "to": "ernst", "label": "Pressures"},
+        {"from": "ia_ukrainians", "to": "grassley", "label": "Pressures"},
+        {"from": "ucca_il", "to": "dignity_act", "label": "Advocates For"}
       ]
     };
 
@@ -455,7 +485,8 @@
       'org': 'Policy Org / Charity',
       'initiative': 'Initiative / Policy',
       'funding': 'Funding / Board',
-      'employer': 'Employer / Corp'
+      'employer': 'Employer / Corp',
+      'diaspora': 'Ukrainian Diaspora / Biz'
     };
 
     const stanceMarkupMap = {
@@ -466,19 +497,20 @@
 
     // Transform raw JSON into Vis.js compatible datasets
     const nodesArray = graphData.nodes.map(n => {
-      // Color Mapping (Green = Support/Visas, Red = Enforcement, Gray = Neutral)
+      // Color Mapping (Green = Support/Visas, Red = Enforcement, Gray = Neutral, Yellow = Diaspora)
       let bgColor = '#cbd5e1'; 
       let borderColor = '#94a3b8';
-      let fontColor = '#1e293b';
+      const fontColor = '#1e293b'; // Forced dark text for all nodes to ensure readability against light canvas
       
-      if (n.stance === 'support') {
+      if (n.type === 'diaspora') {
+        bgColor = '#eab308'; // Tailwind yellow-500
+        borderColor = '#ca8a04'; // Tailwind yellow-600
+      } else if (n.stance === 'support') {
         bgColor = '#10b981'; // Emerald 500
         borderColor = '#059669'; // Emerald 600
-        fontColor = '#ffffff';
       } else if (n.stance === 'against') {
         bgColor = '#ef4444'; // Rose 500
         borderColor = '#dc2626'; // Rose 600
-        fontColor = '#ffffff';
       }
 
       // Shape and Size Mapping
@@ -487,7 +519,7 @@
       
       if (n.type === 'politician') {
         shape = 'dot'; // Circle
-        size = 28;
+        size = 40; // Increased significantly to make politicians the anchor nodes
       } else if (n.type === 'org') {
         shape = 'triangle';
         size = 22;
@@ -500,6 +532,9 @@
       } else if (n.type === 'employer') {
         shape = 'square';
         size = 24;
+      } else if (n.type === 'diaspora') {
+        shape = 'star';
+        size = 28;
       }
 
       return {
@@ -509,7 +544,7 @@
         shape: shape,
         size: size,
         font: { 
-          color: '#1e293b', 
+          color: fontColor, 
           face: 'Inter, sans-serif', 
           size: 13, 
           strokeWidth: 3, 
@@ -630,7 +665,14 @@
       
       document.getElementById('panel-title').innerText = nodeData.label.replace('\n', ' ');
       document.getElementById('panel-type').innerText = typeLabelMap[nodeData.type] || nodeData.type;
-      document.getElementById('panel-stance').innerHTML = stanceMarkupMap[nodeData.stance] || nodeData.stance;
+      
+      // Override stance label to highlight Yellow category for Diaspora
+      if (nodeData.type === 'diaspora') {
+        document.getElementById('panel-stance').innerHTML = '<span class="px-2.5 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-semibold uppercase tracking-wide">Diaspora Influence</span>';
+      } else {
+        document.getElementById('panel-stance').innerHTML = stanceMarkupMap[nodeData.stance] || nodeData.stance;
+      }
+      
       document.getElementById('panel-desc').innerText = nodeData.details;
       document.getElementById('panel-connections').innerHTML = connectionsHtml;
     }
