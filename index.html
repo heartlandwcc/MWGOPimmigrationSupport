@@ -714,6 +714,9 @@
     const data = { nodes: nodes, edges: edges };
     
     const options = {
+      layout: {
+        randomSeed: 42 // Forces a deterministic initial layout position
+      },
       physics: {
         forceAtlas2Based: {
           gravitationalConstant: -300,
