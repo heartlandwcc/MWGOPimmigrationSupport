@@ -151,6 +151,8 @@
     // Embedded JSON Data
     const graphData = {
       "nodes": [
+        {"id": "vance", "label": "[VP] JD Vance\n(US)", "type": "politician", "stance": "against", "details": "Vice President of the United States. Strong advocate for mass deportations and highly restrictive immigration policies, heavily focused on border security and interior enforcement. Role/Committees: Vice President; President of the Senate."},
+        
         {"id": "young", "label": "[S] Todd Young\n(IN)", "type": "politician", "stance": "support", "details": "Republican Senator from Indiana. Lead sponsor of the Heartland Visa Act, promoting place-based immigration to spur economic growth in the Midwest. Committees: Finance; Commerce, Science, & Transportation; Foreign Relations."},
         {"id": "banks", "label": "[S] Jim Banks\n(IN)", "type": "politician", "stance": "against", "details": "Republican Senator from Indiana. Strong advocate for strict border enforcement, deportation operations, and restrictive visa policies. Pressured heavily by local ag groups. Committees: Armed Services; HELP."},
         {"id": "grassley", "label": "[S] Chuck Grassley\n(IA)", "type": "politician", "stance": "against", "details": "Republican Senator from Iowa. Ranking member focused heavily on strict border security; recently led the Laken Riley Act and opposes amnesty without enforcement. Committees: Judiciary; Finance; Agriculture, Nutrition, & Forestry; Budget."},
@@ -163,12 +165,23 @@
         {"id": "marshall", "label": "[S] Roger Marshall\n(KS)", "type": "politician", "stance": "against", "details": "Republican Senator from Kansas. Strong proponent of the Secure the Border Act and highly restrictive asylum policies. Committees: Agriculture; HELP; Budget; Homeland Security."},
         {"id": "hawley", "label": "[S] Josh Hawley\n(MO)", "type": "politician", "stance": "against", "details": "Republican Senator from Missouri. Hardline stance on immigration; vigorously opposes amnesty and any expansion of guest worker programs. Committees: Judiciary; Homeland Security and Governmental Affairs."},
         {"id": "schmitt", "label": "[S] Eric Schmitt\n(MO)", "type": "politician", "stance": "against", "details": "Republican Senator from Missouri. Previously sued the federal administration over border policies during his tenure as Missouri Attorney General. Committees: Armed Services; Judiciary; Commerce."},
+        {"id": "moreno", "label": "[S] Bernie Moreno\n(OH)", "type": "politician", "stance": "against", "details": "Republican Senator from Ohio. Campaigned heavily on securing the border, deportations, and ending sanctuary cities, aligning closely with hardline immigration stances. Committees: Banking; Small Business."},
         
         {"id": "feenstra", "label": "[H] Randy Feenstra\n(IA)", "type": "politician", "stance": "against", "details": "Republican Congressman from Iowa (District 4). Represents a massively productive ag district. Balances border security rhetoric with immense pressure from farm groups for guest workers. Committees: Agriculture; Ways and Means."},
+        {"id": "miller_meeks", "label": "[H] Miller-Meeks\n(IA)", "type": "politician", "stance": "neutral", "details": "Republican Congresswoman from Iowa (District 1). A physician who understands the need for J-1 visa waivers for rural health, while balancing ag labor needs with border security. Committees: Energy & Commerce; Veterans' Affairs."},
+        {"id": "nunn", "label": "[H] Zach Nunn\n(IA)", "type": "politician", "stance": "against", "details": "Republican Congressman from Iowa (District 3). Focuses heavily on border enforcement while receiving significant pressure from the local ag sector. Committees: Agriculture; Financial Services."},
+        {"id": "ashley_hinson", "label": "[H] Ashley Hinson\n(IA)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from Iowa. Strong advocate for physical border security but faces demands from local agriculture for a reliable workforce. Committees: Appropriations."},
         {"id": "smith", "label": "[H] Adrian Smith\n(NE)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Nebraska (District 3). Represents a vast rural district relying heavily on agriculture; navigates between conservative border policies and ag labor necessities. Committees: Ways and Means."},
+        {"id": "bacon", "label": "[H] Don Bacon\n(NE)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Nebraska (District 2). A moderate navigating suburban/rural divides, frequently supporting bipartisan immigration compromises for workforce needs. Committees: Agriculture; Armed Services."},
         {"id": "mann", "label": "[H] Tracey Mann\n(KS)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Kansas (District 1 - 'The Big First'). Deeply tied to agricultural interests and heavily lobbied by farm bureaus regarding guest worker programs. Committees: Agriculture; Transportation and Infrastructure."},
         {"id": "baird", "label": "[H] Jim Baird\n(IN)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Indiana. Sits on the House Agriculture Committee, focusing on rural development and farm labor shortages. Committees: Agriculture; Science, Space, and Technology."},
-        {"id": "ashley_hinson", "label": "[H] Ashley Hinson\n(IA)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from Iowa. Strong advocate for physical border security but faces demands from local agriculture for a reliable workforce. Committees: Appropriations."},
+        {"id": "jordan", "label": "[H] Jim Jordan\n(OH)", "type": "politician", "stance": "against", "details": "Republican Congressman from Ohio. Highly influential Judiciary Chair, shaping hardline conservative immigration policy and a massive proponent of Mandatory E-Verify. Committees: Judiciary (Chair); Oversight and Accountability."},
+        {"id": "mary_miller", "label": "[H] Mary Miller\n(IL)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from rural Illinois (District 15). Member of the House Freedom Caucus, intensely focused on border closures despite representing a heavy agricultural district. Committees: Agriculture; Education and the Workforce."},
+        {"id": "bost", "label": "[H] Mike Bost\n(IL)", "type": "politician", "stance": "against", "details": "Republican Congressman from Southern Illinois. Strongly backs strict border enforcement while navigating the intense labor demands from his rural, agriculture-heavy constituency. Committees: Veterans' Affairs (Chair); Agriculture; Transportation and Infrastructure."},
+        {"id": "finstad", "label": "[H] Brad Finstad\n(MN)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from Minnesota (District 1). A farmer himself, highly focused on the practical labor shortages facing Midwestern agriculture. Committees: Agriculture; Armed Services."},
+        {"id": "jason_smith", "label": "[H] Jason Smith\n(MO)", "type": "politician", "stance": "against", "details": "Republican Congressman from Missouri (District 8). Powerful Ways & Means Chairman representing a massive rural/ag district, leaning hard into strict border policies. Committees: Ways and Means (Chair)."},
+        {"id": "sam_graves", "label": "[H] Sam Graves\n(MO)", "type": "politician", "stance": "against", "details": "Republican Congressman from Missouri (District 6). Transportation Chairman and farmer, navigating the tension between border hawks and ag transport logistics. Committees: Transportation and Infrastructure (Chair); Armed Services."},
+        {"id": "dusty_johnson", "label": "[H] Dusty Johnson\n(SD)", "type": "politician", "stance": "neutral", "details": "Republican Congressman from South Dakota (At-Large). Heavily involved in agricultural policy and an advocate for expanding year-round farm labor programs. Committees: Agriculture; Transportation."},
 
         {"id": "eig", "label": "Economic\nInnovation Grp", "type": "org", "stance": "support", "details": "Public policy organization that developed and heavily champions the Heartland Visa concept to combat demographic and economic decline in the Midwest."},
         {"id": "afp", "label": "Americans for\nProsperity", "type": "org", "stance": "support", "details": "Conservative political advocacy group that officially endorsed the Heartland Visa Act to boost local economies through skilled immigration."},
@@ -191,6 +204,27 @@
         {"id": "midwest_dairy", "label": "Midwest Dairy\nAssoc.", "type": "org", "stance": "support", "details": "Represents thousands of dairy farmers across the Midwest. Fiercely advocates for year-round visa solutions, as cows need milking 365 days a year."},
         {"id": "uschi", "label": "U.S. Custom\nHarvesters", "type": "org", "stance": "support", "details": "Based in Kansas, represents custom harvesters vital to the ag supply chain. Highly dependent on H-2A visas and lobbies against burdensome wage rate hikes."},
         {"id": "ncba", "label": "Natl Cattlemen's\nBeef Assoc.", "type": "org", "stance": "support", "details": "Represents cattle ranchers. Advocates for expanding agricultural visa programs to include year-round labor for feedyards and processors."},
+
+        {"id": "il_farm_bureau", "label": "Illinois Farm\nBureau", "type": "org", "stance": "support", "details": "Represents agricultural interests across Illinois. Highly active in lobbying for H-2A visa expansion to ensure reliable labor for livestock and crop farming."},
+        {"id": "ohio_farm_bureau", "label": "Ohio Farm\nBureau", "type": "org", "stance": "support", "details": "Key advocacy group for Ohio farmers, especially in the nursery, greenhouse, and dairy sectors, pushing hard for year-round agricultural worker visas."},
+        {"id": "ia_farm_bureau", "label": "Iowa Farm\nBureau", "type": "org", "stance": "support", "details": "The largest grassroots farm organization in Iowa, actively lobbying the entire IA delegation for guest worker program expansion."},
+        {"id": "mn_farm_bureau", "label": "Minnesota Farm\nBureau", "type": "org", "stance": "support", "details": "Key advocacy group for Minnesota agriculture, strongly pressing for H-2A and H-2B expansions for rural producers."},
+        {"id": "ohio_nursery", "label": "Ohio Nursery\n& Landscape", "type": "org", "stance": "support", "details": "Represents Ohio's massive green industry. Strongly lobbies Jordan against Mandatory E-Verify unless paired with massive H-2A/H-2B visa expansions."},
+        {"id": "ohio_dairy", "label": "Ohio Dairy\nProducers", "type": "org", "stance": "support", "details": "Advocates for Ohio dairy farmers needing year-round labor. Acts as a direct counter-pressure to Jordan's hardline border focus."},
+        {"id": "ohio_poultry", "label": "Ohio Poultry\nAssoc.", "type": "org", "stance": "support", "details": "Represents the state's large poultry industry. Pressures Jordan on the reality that massive deportations would instantly shutter processing plants in his region."},
+        {"id": "ohio_agribusiness", "label": "Ohio AgriBusiness\nAssoc.", "type": "org", "stance": "support", "details": "Represents the agricultural supply chain. Warns Jordan's office that hardline immigration enforcement without legal visa channels will break local food supply logistics."},
+        {"id": "oh4_farm_bureaus", "label": "OH-4 Local\nFarm Bureaus", "type": "org", "stance": "support", "details": "County-level farm bureaus directly within Jordan's district. They provide authentic, grassroots pushback against his strict enforcement-only rhetoric."},
+        {"id": "in_farm_bureau", "label": "Indiana Farm\nBureau", "type": "org", "stance": "support", "details": "Major agricultural lobby in Indiana aggressively pushing Senator Banks and others to recognize severe farm labor shortages and support visa expansions."},
+        {"id": "ia_pork_producers", "label": "Iowa Pork\nProducers", "type": "org", "stance": "support", "details": "Highly influential trade group in Iowa. Exerts constant pressure on Sens. Grassley and Ernst, as well as local Reps, demanding year-round H-2A solutions for meatpacking."},
+        {"id": "ne_farm_bureau", "label": "Nebraska Farm\nBureau", "type": "org", "stance": "support", "details": "The state's largest ag organization. Serves as a major pressure point on Sens. Fischer and Ricketts to balance their border security focus with the reality of Nebraska's labor gap."},
+        {"id": "ks_livestock_assoc", "label": "KS Livestock\nAssoc.", "type": "org", "stance": "support", "details": "Key lobbying group for the Kansas beef and dairy industries. Constantly pressures Sen. Marshall to support year-round agricultural visas."},
+        {"id": "mo_farm_bureau", "label": "Missouri Farm\nBureau", "type": "org", "stance": "support", "details": "Crucial grassroots organization in Missouri. Acts as a green pressure point on hardline Sens. Hawley and Schmitt, advocating for manageable guest worker programs."},
+        
+        {"id": "ia_rural_health", "label": "Iowa Rural\nHealth Assoc.", "type": "org", "stance": "support", "details": "Advocates for rural hospitals facing severe staffing shortages. Pushes for J-1 visa waivers to bring immigrant doctors to dying rural communities, a critical issue for Grassley and Miller-Meeks."},
+        {"id": "ia_dairy_assoc", "label": "Iowa State\nDairy Assoc.", "type": "org", "stance": "support", "details": "Represents Iowa dairy farmers who operate 365 days a year. Desperately pushes Grassley for year-round agricultural visa solutions to prevent farm bankruptcies."},
+        {"id": "ia_rural_schools", "label": "Rural School\nAdvocates (IA)", "type": "org", "stance": "support", "details": "Represents rural Iowa school districts that increasingly rely on immigrant families to maintain enrollment numbers and prevent devastating local school closures."},
+        {"id": "ia_catholic_conf", "label": "Iowa Catholic\nConference", "type": "org", "stance": "support", "details": "Influential faith-based voice in rural Iowa. Advocates for the dignity of agricultural workers and pressures lawmakers for humane, community-sustaining reforms."},
+        {"id": "ia_rural_dev", "label": "Iowa Rural Dev.\nCouncil", "type": "org", "stance": "support", "details": "Focuses on the survival of Iowa's rural 'Main Streets.' Argues that without new immigrant populations, aging rural economies will collapse."},
 
         {"id": "heartland_visa", "label": "Heartland Visa Act", "type": "initiative", "stance": "support", "details": "Legislation aimed at creating place-based visas to attract highly skilled immigrants and entrepreneurs to rural and stagnating regions."},
         {"id": "laken_riley", "label": "Laken Riley Act", "type": "initiative", "stance": "against", "details": "Legislation mandating ICE arrest and detention for undocumented immigrants charged with certain local offenses."},
@@ -223,37 +257,9 @@
         {"id": "beardstown_smbs", "label": "Beardstown IL\nSMBs", "type": "employer", "stance": "support", "details": "Representative of larger local businesses and town economies in rural meatpacking towns that completely rely on the immigrant workforce for both labor and their consumer base."},
         {"id": "pssi", "label": "PSSI\n(Sanitation)", "type": "employer", "stance": "support", "details": "Major sanitation contractor for Midwestern meatpacking plants. Recently faced massive federal fallout over immigrant child labor, highlighting desperate rural labor shortages."},
         {"id": "regional_processors", "label": "Regional Ag\nProcessors", "type": "employer", "stance": "support", "details": "Medium-sized independent agricultural processors across the Midwest that frequently face ICE raids and audits, which can instantly cripple local town economies."},
-
-        {"id": "vance", "label": "[VP] JD Vance\n(US)", "type": "politician", "stance": "against", "details": "Vice President of the United States. Strong advocate for mass deportations and highly restrictive immigration policies, heavily focused on border security and interior enforcement. Role/Committees: Vice President; President of the Senate."},
-        {"id": "moreno", "label": "[S] Bernie Moreno\n(OH)", "type": "politician", "stance": "against", "details": "Republican Senator from Ohio. Campaigned heavily on securing the border, deportations, and ending sanctuary cities, aligning closely with hardline immigration stances. Committees: Banking; Small Business."},
-        {"id": "jordan", "label": "[H] Jim Jordan\n(OH)", "type": "politician", "stance": "against", "details": "Republican Congressman from Ohio. Highly influential Judiciary Chair, shaping hardline conservative immigration policy and a massive proponent of Mandatory E-Verify. Committees: Judiciary (Chair); Oversight and Accountability."},
-        {"id": "mary_miller", "label": "[H] Mary Miller\n(IL)", "type": "politician", "stance": "against", "details": "Republican Congresswoman from rural Illinois (District 15). Member of the House Freedom Caucus, intensely focused on border closures despite representing a heavy agricultural district. Committees: Agriculture; Education and the Workforce."},
-        {"id": "bost", "label": "[H] Mike Bost\n(IL)", "type": "politician", "stance": "against", "details": "Republican Congressman from Southern Illinois. Strongly backs strict border enforcement while navigating the intense labor demands from his rural, agriculture-heavy constituency. Committees: Veterans' Affairs (Chair); Agriculture; Transportation and Infrastructure."},
-        
-        {"id": "il_farm_bureau", "label": "Illinois Farm\nBureau", "type": "org", "stance": "support", "details": "Represents agricultural interests across Illinois. Highly active in lobbying for H-2A visa expansion to ensure reliable labor for livestock and crop farming."},
-        {"id": "ohio_farm_bureau", "label": "Ohio Farm\nBureau", "type": "org", "stance": "support", "details": "Key advocacy group for Ohio farmers, especially in the nursery, greenhouse, and dairy sectors, pushing hard for year-round agricultural worker visas."},
-        
-        {"id": "ohio_nursery", "label": "Ohio Nursery\n& Landscape", "type": "org", "stance": "support", "details": "Represents Ohio's massive green industry. Strongly lobbies Jordan against Mandatory E-Verify unless paired with massive H-2A/H-2B visa expansions."},
-        {"id": "ohio_dairy", "label": "Ohio Dairy\nProducers", "type": "org", "stance": "support", "details": "Advocates for Ohio dairy farmers needing year-round labor. Acts as a direct counter-pressure to Jordan's hardline border focus."},
-        {"id": "ohio_poultry", "label": "Ohio Poultry\nAssoc.", "type": "org", "stance": "support", "details": "Represents the state's large poultry industry. Pressures Jordan on the reality that massive deportations would instantly shutter processing plants in his region."},
-        {"id": "ohio_agribusiness", "label": "Ohio AgriBusiness\nAssoc.", "type": "org", "stance": "support", "details": "Represents the agricultural supply chain. Warns Jordan's office that hardline immigration enforcement without legal visa channels will break local food supply logistics."},
-        {"id": "oh4_farm_bureaus", "label": "OH-4 Local\nFarm Bureaus", "type": "org", "stance": "support", "details": "County-level farm bureaus directly within Jordan's district. They provide authentic, grassroots pushback against his strict enforcement-only rhetoric."},
-
         {"id": "case_farms", "label": "Case Farms", "type": "employer", "stance": "support", "details": "Major poultry processor operating in Ohio. Highly dependent on immigrant and refugee labor forces to staff its processing lines."},
         {"id": "rantoul_foods", "label": "Rantoul Foods", "type": "employer", "stance": "support", "details": "Large pork processing facility in rural Illinois. Relies extensively on immigrant workers to maintain daily operations in the face of local labor shortages."},
-        
-        {"id": "in_farm_bureau", "label": "Indiana Farm\nBureau", "type": "org", "stance": "support", "details": "Major agricultural lobby in Indiana aggressively pushing Senator Banks and others to recognize severe farm labor shortages and support visa expansions."},
-        {"id": "ia_pork_producers", "label": "Iowa Pork\nProducers", "type": "org", "stance": "support", "details": "Highly influential trade group in Iowa. Exerts constant pressure on Sens. Grassley and Ernst, as well as local Reps, demanding year-round H-2A solutions for meatpacking."},
-        {"id": "ne_farm_bureau", "label": "Nebraska Farm\nBureau", "type": "org", "stance": "support", "details": "The state's largest ag organization. Serves as a major pressure point on Sens. Fischer and Ricketts to balance their border security focus with the reality of Nebraska's labor gap."},
-        {"id": "ks_livestock_assoc", "label": "KS Livestock\nAssoc.", "type": "org", "stance": "support", "details": "Key lobbying group for the Kansas beef and dairy industries. Constantly pressures Sen. Marshall to support year-round agricultural visas."},
-        {"id": "mo_farm_bureau", "label": "Missouri Farm\nBureau", "type": "org", "stance": "support", "details": "Crucial grassroots organization in Missouri. Acts as a green pressure point on hardline Sens. Hawley and Schmitt, advocating for manageable guest worker programs."},
-        
-        {"id": "ia_rural_health", "label": "Iowa Rural\nHealth Assoc.", "type": "org", "stance": "support", "details": "Advocates for rural hospitals facing severe staffing shortages. Pushes for J-1 visa waivers to bring immigrant doctors to dying rural communities, a critical issue for Grassley."},
-        {"id": "ia_dairy_assoc", "label": "Iowa State\nDairy Assoc.", "type": "org", "stance": "support", "details": "Represents Iowa dairy farmers who operate 365 days a year. Desperately pushes Grassley for year-round agricultural visa solutions to prevent farm bankruptcies."},
-        {"id": "ia_rural_schools", "label": "Rural School\nAdvocates (IA)", "type": "org", "stance": "support", "details": "Represents rural Iowa school districts that increasingly rely on immigrant families to maintain enrollment numbers and prevent devastating local school closures."},
-        {"id": "ia_catholic_conf", "label": "Iowa Catholic\nConference", "type": "org", "stance": "support", "details": "Influential faith-based voice in rural Iowa. Advocates for the dignity of agricultural workers and pressures lawmakers for humane, community-sustaining reforms."},
-        {"id": "ia_rural_dev", "label": "Iowa Rural Dev.\nCouncil", "type": "org", "stance": "support", "details": "Focuses on the survival of Iowa's rural 'Main Streets.' Argues that without new immigrant populations, aging rural economies will collapse."},
-        
+
         {"id": "ucca_il", "label": "UCCA Illinois", "type": "diaspora", "stance": "support", "details": "Ukrainian Congress Committee of America (IL Division). A massive diaspora block in Illinois advocating for refugee pathways (U4U) and immigrant workforce protections."},
         {"id": "uzo_ohio", "label": "UZO Ohio", "type": "diaspora", "stance": "support", "details": "United Ukrainian Organizations of Ohio. A powerful cultural and political force in Ohio, deeply rooted in the Parma/Cleveland area, pressuring lawmakers for refugee support."},
         {"id": "vitaliy_kutnyy", "label": "Vitaliy Kutnyy\n(Diaspora Biz)", "type": "diaspora", "stance": "support", "details": "President & CEO of Selfreliance FCU and prominent Ukrainian-American business leader. Represents the massive economic impact of diaspora-led institutions in the Midwest."},
@@ -324,6 +330,9 @@
         {"from": "agripac", "to": "ernst", "label": "Funds"},
         {"from": "agripac", "to": "grassley", "label": "Funds"},
         {"from": "agripac", "to": "moran", "label": "Funds"},
+        {"from": "agripac", "to": "miller_meeks", "label": "Funds"},
+        {"from": "agripac", "to": "finstad", "label": "Funds"},
+        {"from": "agripac", "to": "dusty_johnson", "label": "Funds"},
         
         {"from": "pork_pac", "to": "feenstra", "label": "Funds"},
         {"from": "pork_pac", "to": "ernst", "label": "Funds"},
@@ -350,6 +359,8 @@
         {"from": "clf", "to": "ashley_hinson", "label": "Funds"},
         {"from": "clf", "to": "mann", "label": "Funds"},
         {"from": "clf", "to": "smith", "label": "Funds"},
+        {"from": "clf", "to": "nunn", "label": "Funds"},
+        {"from": "clf", "to": "bacon", "label": "Funds"},
         
         {"from": "hff", "to": "banks", "label": "Funds"},
         {"from": "hff", "to": "hawley", "label": "Funds"},
@@ -358,20 +369,27 @@
         {"from": "ashley_hinson", "to": "secure_border", "label": "Supporter"},
         {"from": "mann", "to": "secure_border", "label": "Supporter"},
         {"from": "smith", "to": "secure_border", "label": "Supporter"},
+        {"from": "nunn", "to": "secure_border", "label": "Supporter"},
+        {"from": "jason_smith", "to": "secure_border", "label": "Supporter"},
+        {"from": "sam_graves", "to": "secure_border", "label": "Supporter"},
         
         {"from": "ne_appleseed", "to": "smith", "label": "Lobbies"},
         {"from": "ne_appleseed", "to": "farm_workforce", "label": "Advocates For"},
         {"from": "in_chamber", "to": "young", "label": "Endorses"},
         {"from": "in_chamber", "to": "baird", "label": "Lobbies"},
         {"from": "sd_farmers", "to": "rounds", "label": "Lobbies"},
+        {"from": "sd_farmers", "to": "dusty_johnson", "label": "Lobbies"},
         {"from": "sd_farmers", "to": "farm_workforce", "label": "Advocates For"},
         
         {"from": "midwest_dairy", "to": "h2a_expansion", "label": "Advocates For"},
         {"from": "midwest_dairy", "to": "aewr_freeze", "label": "Advocates For"},
+        {"from": "midwest_dairy", "to": "finstad", "label": "Lobbies"},
         {"from": "uschi", "to": "aewr_freeze", "label": "Advocates For"},
         {"from": "uschi", "to": "moran", "label": "Lobbies"},
+        {"from": "uschi", "to": "sam_graves", "label": "Lobbies"},
         {"from": "ncba", "to": "h2a_expansion", "label": "Advocates For"},
         {"from": "ncba", "to": "marshall", "label": "Lobbies"},
+        {"from": "ncba", "to": "dusty_johnson", "label": "Lobbies"},
         {"from": "thune", "to": "aewr_freeze", "label": "Supporter"},
         {"from": "ernst", "to": "aewr_freeze", "label": "Supporter"},
         {"from": "rounds", "to": "aewr_freeze", "label": "Supporter"},
@@ -417,6 +435,13 @@
         {"from": "il_farm_bureau", "to": "mary_miller", "label": "Lobbies"},
         {"from": "ohio_farm_bureau", "to": "jordan", "label": "Lobbies"},
         {"from": "ohio_farm_bureau", "to": "vance", "label": "Lobbies"},
+        {"from": "ia_farm_bureau", "to": "grassley", "label": "Lobbies"},
+        {"from": "ia_farm_bureau", "to": "ernst", "label": "Lobbies"},
+        {"from": "ia_farm_bureau", "to": "feenstra", "label": "Lobbies"},
+        {"from": "ia_farm_bureau", "to": "hinson", "label": "Lobbies"},
+        {"from": "ia_farm_bureau", "to": "nunn", "label": "Pressures"},
+        {"from": "ia_farm_bureau", "to": "miller_meeks", "label": "Lobbies"},
+        {"from": "mn_farm_bureau", "to": "finstad", "label": "Lobbies"},
         {"from": "case_farms", "to": "ewea_act", "label": "Advocates For"},
         {"from": "case_farms", "to": "vance", "label": "Lobbies"},
         {"from": "rantoul_foods", "to": "ewea_act", "label": "Advocates For"},
@@ -429,18 +454,23 @@
         {"from": "ia_pork_producers", "to": "ernst", "label": "Pressures"},
         {"from": "ia_pork_producers", "to": "feenstra", "label": "Pressures"},
         {"from": "ia_pork_producers", "to": "ashley_hinson", "label": "Pressures"},
+        {"from": "ia_pork_producers", "to": "miller_meeks", "label": "Pressures"},
         {"from": "sd_farmers", "to": "thune", "label": "Pressures"},
         {"from": "sd_farmers", "to": "rounds", "label": "Pressures"},
         {"from": "ne_farm_bureau", "to": "fischer", "label": "Pressures"},
         {"from": "ne_farm_bureau", "to": "ricketts", "label": "Pressures"},
+        {"from": "ne_farm_bureau", "to": "bacon", "label": "Lobbies"},
         {"from": "ks_livestock_assoc", "to": "marshall", "label": "Pressures"},
         {"from": "seaboard", "to": "marshall", "label": "Pressures"},
         {"from": "mo_farm_bureau", "to": "hawley", "label": "Pressures"},
         {"from": "mo_farm_bureau", "to": "schmitt", "label": "Pressures"},
+        {"from": "mo_farm_bureau", "to": "jason_smith", "label": "Pressures"},
+        {"from": "mo_farm_bureau", "to": "sam_graves", "label": "Pressures"},
         {"from": "ohio_farm_bureau", "to": "moreno", "label": "Pressures"},
         {"from": "case_farms", "to": "moreno", "label": "Pressures"},
 
         {"from": "ia_rural_health", "to": "grassley", "label": "Pressures"},
+        {"from": "ia_rural_health", "to": "miller_meeks", "label": "Lobbies"},
         {"from": "ia_dairy_assoc", "to": "grassley", "label": "Pressures"},
         {"from": "ia_rural_schools", "to": "grassley", "label": "Pressures"},
         {"from": "ia_catholic_conf", "to": "grassley", "label": "Pressures"},
@@ -475,7 +505,14 @@
         {"from": "ia_ukrainians", "to": "feenstra", "label": "Pressures"},
         {"from": "ia_ukrainians", "to": "ernst", "label": "Pressures"},
         {"from": "ia_ukrainians", "to": "grassley", "label": "Pressures"},
-        {"from": "ucca_il", "to": "dignity_act", "label": "Advocates For"}
+        {"from": "ucca_il", "to": "dignity_act", "label": "Advocates For"},
+        
+        {"from": "miller_meeks", "to": "farm_workforce", "label": "Supporter"},
+        {"from": "finstad", "to": "h2a_expansion", "label": "Supporter"},
+        {"from": "dusty_johnson", "to": "farm_workforce", "label": "Supporter"},
+        {"from": "bacon", "to": "dignity_act", "label": "Supporter"},
+        {"from": "bacon", "to": "farm_workforce", "label": "Supporter"},
+        {"from": "bipartisan_policy", "to": "bacon", "label": "Advises"}
       ]
     };
 
@@ -585,9 +622,9 @@
     const options = {
       physics: {
         forceAtlas2Based: {
-          gravitationalConstant: -250,
+          gravitationalConstant: -300,
           centralGravity: 0.01,
-          springLength: 200,
+          springLength: 250,
           springConstant: 0.06
         },
         maxVelocity: 50,
